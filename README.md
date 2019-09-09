@@ -1,5 +1,5 @@
 
-Crystal Collector gGame
+Crystal Collector Game
 
 
 Each crystal is randomly assigned a value at the start of a new round
