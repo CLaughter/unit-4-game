@@ -9,26 +9,117 @@
 
 	<!-- reset.css -->
 	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+	<!-- style.css -->
+	<link rel="stylesheet" type="text/css" href="assets/css/game.css">
 
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-	<link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One|Ek+Mukta" rel="stylesheet">
-
-	<!-- style.css -->
-	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
 	 <!-- JQuery -->
-  	<script src="https://code.jquery.com/jquery.js"></script>
+	 <script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
 
 </head>
 <body>
 
+	<!-- Main Container -->
+	<div id="container">
 
+		<div class="row">
+			<div class='col-sm-3'>
+				<div class="title">
+				</div>
+			</div>
+		</div>
 
+		<div class="row">
+			<div class="col-sm-6">
+				<div class="instructions">
+					<p id="instruct">
+							You will be given a random number at the start of the game.
+							<br>
+							There are 4 crystals below. By clicking on a crystal, you will add a 
+							specific amount of points to your total score.
+							<br>
+							You will win the game by matching your total score to the random number.
+							<br>
+							The value of each crystal is hidden from you until you click on it.
+							<br>
+							Each time the game starts, a new value of each crystal will be assigned.
+					</p>
+				</div>
+			</div>
+		</div>
 
+		<div class="row">
+			<div class="col-sm-3">
+				<div class="randNum">
+					Random Number
+				</div>
+			</div>
+				
+			<div class="col-sm-2">
+				<div id='scoreboard'>
+					<p id="win">
+						Wins: 
+					</p>
 
+					<p id="loss">					
+						Losses: 
+					</p>				
+				</div>
+			</div>
+		</div>
+
+		<!-- Crystals -->
+		<div class="row">
+			<div class='col-sm-1'>
+				<div class="crystal1">
+					img1
+				</div>
+			</div>
+
+			<div class='col-sm-1'>
+				<div class="crystal2">
+					img2
+				</div>
+			</div>
+
+			<div class='col-sm-1'>
+				<div class=crystal3>
+					img3
+				</div>
+			</div>
+
+			<div class='col-sm-1'>
+				<div class="crystal4">
+					img4
+				</div>
+			</div>
+		</div>
+
+		<!-- Score Header-->
+		<div class="row">
+			<div class="col-sm-3">
+				<div id="yourScore">
+					Your total score is: 
+				</div>
+			</div>
+		</div>				
+
+		<!-- Cumulative user total -->
+		<div class="row">
+			<div class="col-sm-3">
+				<div class="sumTot">
+					xx
+				</div>
+			</div>
+		</div>
+
+	</div>
+				
 
 
 
