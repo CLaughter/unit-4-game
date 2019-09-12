@@ -1,0 +1,163 @@
+
+body {
+  background-color: #c0a5a1;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  background-color: #c0a5a1;
+  padding: 10px;
+}
+
+#title {
+  color: rgb(31, 9, 9);
+  width: 100%;
+  height: 20px;
+  text-align: right;
+  padding-bottom: 10px;
+  margin: 10px;
+  font-size: 32px;
+}
+#instructions {
+  color: rgb(31, 9, 9);
+  line-height: 1.5;
+  width: 100%;
+  text-align: left;
+  padding: 20px;
+  margin: 10px;
+  font-size: large;
+}
+
+#randNum {
+  background-color: cornsilk;
+  color: rgb(31, 9, 9);
+  padding: 50px;
+  margin: 5px;
+  margin-left: 200px;
+  width: 300px;
+  height: 300px;
+  border: 1px solid rgb(31, 9, 9);
+  border-radius: 300px;
+  font-size: 20px;
+}
+
+#num1 {
+  color: rgb(31, 9, 9);
+  padding: 25px;
+  width: 100px;
+  height: 100px;
+  border: 1px solid rgb(31, 9, 9);
+  border-radius: 10px;
+  font-size: 24px;
+}
+
+#sumTotal {
+  background-color: cornsilk;
+  color: rgb(31, 9, 9);  
+  padding: 50px;
+  margin: 5px;
+  width: 300px;
+  height: 300px;
+  border: 1px solid rgb(77, 40, 40);
+  border-radius: 300px;
+  font-size: 20px;
+}
+
+#num2 {
+  color: rgb(31, 9, 9);
+  padding: 25px;
+  width: 100px;
+  height: 100px;
+  border: 1px solid rgb(31, 9, 9);
+  border-radius: 10px;
+  font-size: 24px;
+}
+
+.images { 
+  padding: 2px;
+  width: 100%;
+  margin-left: 14%;
+}
+
+#card1 {
+  border: 1px solid rgb(31, 9, 9);
+  padding-right: 1px;  
+  width: 100%;
+  height: 40px;
+}
+
+#card2 {
+  border: 1px solid rgb(31, 9, 9);
+  padding-right: 1px;
+  padding-left: 1px;
+  width: 100%;
+  height: 40px;
+}
+
+#card3 {
+  border: 1px solid rgb(31, 9, 9);
+  padding-right: 1px;
+  padding-left: 1px;
+  width: 100%;
+  height: 40px;
+}
+
+#card4 {
+  border: 1px solid rgb(31, 9, 9);
+  padding-left: 1px;
+  width: 100%;
+  height: 40px;
+}
+
+#runTotal {
+  color: rgb(31, 9, 9);
+  padding: 1px;
+  width: 300px;
+  text-align: center;
+  font-size: large;
+}
+
+#win {
+  color: rgb(31, 9, 9);
+  width: 100%;
+  height: 50px;
+  padding-top: 15px;
+  font-size: large;
+}
+
+#loss {
+  color: rgb(31, 9, 9);
+  width: 100%;
+  height: 50px;
+  padding-top: 15px;
+  font-size: large;
+}
+
+#bottom {
+  background-color: rgb(54, 54, 54);
+  color: white;
+  text-align: center;
+  font-size: small;
+  padding: 5px;
+  margin: 0;
+  width: 100%;
+  height: 20px;
+  position: fixed;
+  bottom: 0;
+}
+
+#footer {
+  position: static;
+}
+
+@media only screen and (max-width: 1000px) and (min-width: 575px) {
+  .row,
+  #randNum,
+  #sumTotal,
+  #num1,
+  #num2 {
+    width: 100%;
+  }
+}
+
