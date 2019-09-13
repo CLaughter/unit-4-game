@@ -1,47 +1,16 @@
 
 
-  // Text to HTML/CSS
-let title = $('#title');
-title.html('<h6>Crystal Collection</h6>')
-$('#title').css('text-align','center');
-
-let instructions = $('#instructions');
-instructions.html(
-  '<p>You will be given a random number at the start of the game.</p> <p>There are 4 crystals below. By clicking on a crystal, you will add a specific amount of points to your total score. <br> You will win the game by matching your total score to the random number. <br> The value of each crystal is hidden from you until you click on it. <br> Each time the game starts, a new value of each crystal will be assigned.</p>'
-  )
-  $('#instructions').css('text-align','center');
-
-  // let randNum = $('#randNum');
-  // randNum.text('Random Number:')
-  // $('#randNum').css('text-align','center');
+// Text to HTML/CSS ****
 
   let num1 = $('#num1');
   num1.text('20')
   $('#num1').css('text-align','center');
 
-  // let sumTotal = $('#sumTotal');
-  // sumTotal.text('Running total:') 
-  // $('#sumTotal').css('text-align','center'); 
-
   let num2 = $('#num2');
   num2.text('40')
   $('#num2').css('text-align','center');
 
-  let win = $('#win');
-  win.text('Wins: ')
-  $('#win').css('text-align','center');
-
-  let loss = $('#loss');
-  loss.text('Losses: ')
-  $('#loss').css('text-align','left');
-
-  let footer = $('#footer');
-  footer.text('Copyright ©')
-  // **************************************************
-
-
-
-// Detect if window has loaded
+// Detect if window has loaded ****
 window.onload = function() {
   alert('Window is loaded');
 }
@@ -73,11 +42,6 @@ $(document).ready(function() {
   // random computer selection
   let randNumber; // number to match  
 	let tileNumber = []; // random tile values
-
-	let t1;
-	let t2;
-	let t3;
-	let t4;
 
   // user's choice total
   let sumTotal = 0; 
@@ -114,16 +78,11 @@ $(document).ready(function() {
   
  
   function tileValue(arr) {
-    // Tile value change by array
-    for(i = 0; i < arr.length; i++) {
-
-		$("#button-" + (i+1)).attr("value", arr[i]);
-		console.log(this);
-		}
-		t1 = arr[0];
-		t2 = arr[1];
-		t3 = arr[2];
-		t4 = arr[3];
+		// Tile value change by array
+		$('.crystal').each(function() {
+			let z = arr[Math.floor(Math.random() * arr.length)];
+			$(this).attr("value", z);
+		})
 	} // End function
 
    // Game Reset****
@@ -151,29 +110,36 @@ $(document).ready(function() {
 
 		// crystal button functions
 
-		$("#card-1").on("click", function() {
-
-			sumTotal += t1;
+		$(".crystal").on("click", function() {
+			let crystalValue = parseInt($(this).attr("value"));
+			sumTotal += crystalValue;
 			$("#num2").html(sumTotal);
 		});
+		
 
-		$("#card-2").on("click", function() {
+		// $("#card-1").on("click", function() {
 
-			sumTotal += t2;
-			$("#num2").html(sumTotal);
-		});
+		// 	sumTotal += t1;
+		// 	$("#num2").html(sumTotal);
+		// });
 
-		$("#card-3").on("click", function() {
+		// $("#card-2").on("click", function() {
 
-			sumTotal += t3;
-			$("#num2").html(sumTotal);
-		});
+		// 	sumTotal += t2;
+		// 	$("#num2").html(sumTotal);
+		// });
 
-		$("#card-4").on("click", function() {
+		// $("#card-3").on("click", function() {
 
-			sumTotal += t4;
-			$("#num2").html(sumTotal);
-		});
+		// 	sumTotal += t3;
+		// 	$("#num2").html(sumTotal);
+		// });
+
+		// $("#card-4").on("click", function() {
+
+		// 	sumTotal += t4;
+		// 	$("#num2").html(sumTotal);
+		// });
 
 	$("button").on("click", function() {
 		if (sumTotal == randNumber) {
@@ -181,7 +147,7 @@ $(document).ready(function() {
 			wins++;
 			console.log(sumTotal);
 			$("#num2").html(sumTotal);
-			$("#win").html("Wins: " + wins);
+			$("#win").html("<h4>Wins: </h4>" + wins);
 
 
 			setTimeout(function() {gameReset("WINNER!!")}, 200);
@@ -191,7 +157,7 @@ $(document).ready(function() {
 
 			losses++;
 			$("#num2").html(sumTotal);
-			$("#loss").html("Losses: " + losses);
+			$("#loss").html("<h4>Losses: </h4>" + losses);
 
 			setTimeout(function() {gameReset("YOU DIDN'T WIN!")}, 200);
 		}

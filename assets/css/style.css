@@ -17,7 +17,8 @@ body {
   text-align: right;
   padding-bottom: 10px;
   margin: 10px;
-  font-size: 32px;
+  font-size: 36px;
+  text-align: center;
 }
 #instructions {
   color: rgb(31, 9, 9);
@@ -27,26 +28,30 @@ body {
   padding: 20px;
   margin: 10px;
   font-size: large;
+  text-align: center;
 }
 
 #randNum {
   background-color: cornsilk;
   color: rgb(31, 9, 9);
-  padding: 20px;
+  padding: 25px;
   margin: 5px;
-  margin-left: 200px;
+  margin-left: 230px;
   width: 300px;
   height: 300px;
   border: 1px solid rgb(31, 9, 9);
   border-radius: 300px;
   font-size: 20px;
+  text-align: center;
 }
 
 #num1 {
   color: rgb(31, 9, 9);
-  padding: 10px;
-  width: 300px;
-  height: 300px;
+  padding: 30px;
+  margin-left: 71px;
+  margin-top: 50px;
+  width: 100px;
+  height: 100px;
   border: 1px solid rgb(31, 9, 9);
   border-radius: 10px;
   font-size: 24px;
@@ -55,20 +60,23 @@ body {
 #sumTotal {
   background-color: cornsilk;
   color: rgb(31, 9, 9);  
-  padding: 20px;
+  padding: 25px;
   margin: 5px;
   width: 300px;
   height: 300px;
   border: 1px solid rgb(77, 40, 40);
   border-radius: 300px;
   font-size: 20px;
+  text-align: center;
 }
 
 #num2 {
   color: rgb(31, 9, 9);
-  padding: 10px;
-  width: 300px;
-  height: 300px;
+  padding: 30px;
+  margin-left: 71px;
+  margin-top: 50px;
+  width: 100px;
+  height: 100px;
   border: 1px solid rgb(31, 9, 9);
   border-radius: 10px;
   font-size: 24px;
@@ -77,7 +85,7 @@ body {
 .images { 
   padding: 2px;
   width: 100%;
-  margin-left: 14%;
+  margin-left: 20%;
 }
 
 #card1 {
@@ -124,6 +132,7 @@ body {
   height: 50px;
   padding-top: 15px;
   font-size: large;
+  text-align: center;
 }
 
 #loss {
@@ -132,6 +141,7 @@ body {
   height: 50px;
   padding-top: 15px;
   font-size: large;
+  text-align: left;
 }
 
 #bottom {
