@@ -11,32 +11,21 @@ instructions.html(
   )
   $('#instructions').css('text-align','center');
 
-  let randNum = $('#randNum');
-  randNum.text('Random Number:')
-  $('#randNum').css('text-align','center');
+  // let randNum = $('#randNum');
+  // randNum.text('Random Number:')
+  // $('#randNum').css('text-align','center');
 
   let num1 = $('#num1');
   num1.text('20')
   $('#num1').css('text-align','center');
 
-  let sumTotal = $('#sumTotal');
-  sumTotal.text('Running total:') 
-  $('#sumTotal').css('text-align','center'); 
+  // let sumTotal = $('#sumTotal');
+  // sumTotal.text('Running total:') 
+  // $('#sumTotal').css('text-align','center'); 
 
   let num2 = $('#num2');
   num2.text('40')
   $('#num2').css('text-align','center');
-
-  let images = $('.images'); 
-
-  let img1 = $('#card1');
-  img1.text('w')
-  let img2 = $('#card2');
-  img2.text('x')
-  let img3 = $('#card3');
-  img3.text('y')
-  let img4 = $('#card4');
-  img4.text('z')
 
   let win = $('#win');
   win.text('Wins: ')
@@ -54,7 +43,7 @@ instructions.html(
 
 // Detect if window has loaded
 window.onload = function() {
-  // alert('Window is loaded');
+  alert('Window is loaded');
 }
 
 // CSS and Images may not have yet loaded, but the DOM has loaded.
@@ -66,16 +55,16 @@ $(document).ready(function() {
   // random computer variable array
   let numHold = [];
 
-  for (let i = 19; i < 120; i++) {
-    numHold.push(x);
+  for (let i = 19; i <= 120; i++) {
+    numHold.push(i);
   }
 
   // crystal numbers array
   let tiles = [];
 
-  for (var y = 1; y < 13; y++) {
+  for (var i = 1; i < 13; i++) {
 
-    tiles.push(y);
+    tiles.push(i);
   }
   console.log(tiles); // test
 
@@ -124,23 +113,23 @@ $(document).ready(function() {
   } // End function
   
  
-  function tileValue(num) {
+  function tileValue(arr) {
     // Tile value change by array
-    for(i = 0; i < r.length; i++) {
+    for(i = 0; i < arr.length; i++) {
 
-		$("#button-" + (i+1)).attr("value", num[i]);
+		$("#button-" + (i+1)).attr("value", arr[i]);
 		console.log(this);
 		}
-		t1 = num[0];
-		t2 = num[1];
-		t3 = num[2];
-		t4 = num[3];
+		t1 = arr[0];
+		t2 = arr[1];
+		t3 = arr[2];
+		t4 = arr[3];
 	} // End function
 
-   // Game Reset
+   // Game Reset****
 	function gameReset(r) {
 
-		tileNumber = []; // clears  values
+		tileNumber = []; // clears values
 
 		randNum(numHold);
 
@@ -154,7 +143,7 @@ $(document).ready(function() {
 		alert(r);
 	} // END of gameReset function
 
-	// *** GAME SETTINGS AT START ***
+	// Starting Game Settings****
 
 	randNum(numHold); // random number to match
 	randTile(tiles); // array of random crystal values
@@ -187,12 +176,11 @@ $(document).ready(function() {
 		});
 
 	$("button").on("click", function() {
-		// this is what happens if the user wins
 		if (sumTotal == randNumber) {
 
 			wins++;
 			console.log(sumTotal);
-			$("#num1").html(sumTotal);
+			$("#num2").html(sumTotal);
 			$("#win").html("Wins: " + wins);
 
 
@@ -202,11 +190,11 @@ $(document).ready(function() {
 		else if (sumTotal > randNumber){
 
 			losses++;
-			$("#loss").html(sumTotal);
+			$("#num2").html(sumTotal);
 			$("#loss").html("Losses: " + losses);
 
 			setTimeout(function() {gameReset("YOU DIDN'T WIN!")}, 200);
 		}
 	});
 
-}); // end of script
+}); // end script
