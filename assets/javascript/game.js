@@ -44,11 +44,12 @@ instructions.html(
 
   let loss = $('#loss');
   loss.text('Losses: ')
-  $('#loss').css('text-align','center');
+  $('#loss').css('text-align','left');
 
   let footer = $('#footer');
   footer.text('Copyright ©')
   // **************************************************
+
 
 
 // Detect if window has loaded
@@ -65,7 +66,7 @@ $(document).ready(function() {
   // random computer variable array
   let numHold = [];
 
-  for (var x = 19; x < 120; x++) {
+  for (let i = 19; i < 120; i++) {
     numHold.push(x);
   }
 
@@ -76,7 +77,7 @@ $(document).ready(function() {
 
     tiles.push(y);
   }
-  // console.log(tiles); // test
+  console.log(tiles); // test
 
 // Global Variables****
 
@@ -100,13 +101,112 @@ $(document).ready(function() {
 	// pick a random number
 	function randNum(num) {
 
-		var z = num[Math.floor(Math.random() * num.length)];
+		let z = num[Math.floor(Math.random() * num.length)];
 		randNumber = z;
-		$("#randNum").html(randNumber);
+		$("#num1").html(randNumber);
 
-		console.log('randNumber');
+		console.log(randNumber);
 
+  } // End function
+  
+  	// pick random tile numbers
+	function randTile(num) {
+
+		for (let i = 0; i < 4; i++){
+
+			let a = num[Math.floor(Math.random() * num.length)];
+
+			tileNumber.push(a);
+		}
+    // check which numbers have been picked
+		console.log(tileNumber);
+
+  } // End function
+  
+ 
+  function tileValue(num) {
+    // Tile value change by array
+    for(i = 0; i < r.length; i++) {
+
+		$("#button-" + (i+1)).attr("value", num[i]);
+		console.log(this);
+		}
+		t1 = num[0];
+		t2 = num[1];
+		t3 = num[2];
+		t4 = num[3];
 	} // End function
 
+   // Game Reset
+	function gameReset(r) {
 
-});
+		tileNumber = []; // clears  values
+
+		randNum(numHold);
+
+		randTile(tiles);
+
+		tileValue(tileNumber);
+
+		sumTotal = 0;
+		$("#num2").html(sumTotal);
+
+		alert(r);
+	} // END of gameReset function
+
+	// *** GAME SETTINGS AT START ***
+
+	randNum(numHold); // random number to match
+	randTile(tiles); // array of random crystal values
+	tileValue(tileNumber);
+
+		// crystal button functions
+
+		$("#card-1").on("click", function() {
+
+			sumTotal += t1;
+			$("#num2").html(sumTotal);
+		});
+
+		$("#card-2").on("click", function() {
+
+			sumTotal += t2;
+			$("#num2").html(sumTotal);
+		});
+
+		$("#card-3").on("click", function() {
+
+			sumTotal += t3;
+			$("#num2").html(sumTotal);
+		});
+
+		$("#card-4").on("click", function() {
+
+			sumTotal += t4;
+			$("#num2").html(sumTotal);
+		});
+
+	$("button").on("click", function() {
+		// this is what happens if the user wins
+		if (sumTotal == randNumber) {
+
+			wins++;
+			console.log(sumTotal);
+			$("#num1").html(sumTotal);
+			$("#win").html("Wins: " + wins);
+
+
+			setTimeout(function() {gameReset("WINNER!!")}, 200);
+		}
+
+		else if (sumTotal > randNumber){
+
+			losses++;
+			$("#loss").html(sumTotal);
+			$("#loss").html("Losses: " + losses);
+
+			setTimeout(function() {gameReset("YOU DIDN'T WIN!")}, 200);
+		}
+	});
+
+}); // end of script
