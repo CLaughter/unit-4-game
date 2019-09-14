@@ -48,7 +48,6 @@ $(document).ready(function() {
 
 	let wins = 0;
 	let losses = 0;
-
 	// Functions****
 
 	// pick a random number
