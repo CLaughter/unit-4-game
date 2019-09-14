@@ -117,30 +117,6 @@ $(document).ready(function() {
 		});
 		
 
-		// $("#card-1").on("click", function() {
-
-		// 	sumTotal += t1;
-		// 	$("#num2").html(sumTotal);
-		// });
-
-		// $("#card-2").on("click", function() {
-
-		// 	sumTotal += t2;
-		// 	$("#num2").html(sumTotal);
-		// });
-
-		// $("#card-3").on("click", function() {
-
-		// 	sumTotal += t3;
-		// 	$("#num2").html(sumTotal);
-		// });
-
-		// $("#card-4").on("click", function() {
-
-		// 	sumTotal += t4;
-		// 	$("#num2").html(sumTotal);
-		// });
-
 	$("button").on("click", function() {
 		if (sumTotal == randNumber) {
 
