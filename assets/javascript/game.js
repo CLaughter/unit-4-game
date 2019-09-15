@@ -17,7 +17,7 @@ window.onload = function() {
 
 // CSS and Images may not have yet loaded, but the DOM has loaded.
 $(document).ready(function() {
-  alert('Document has loaded');
+  alert('DOM has loaded');
  
 // Arrays****
 
